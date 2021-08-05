@@ -1,7 +1,6 @@
 import torch
 import torchvision.transforms as transforms
 from PIL import Image
-import io
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
