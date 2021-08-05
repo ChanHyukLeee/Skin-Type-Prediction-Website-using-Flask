@@ -2,7 +2,6 @@ import os
 from flask import Flask
 from flask import request
 from flask import render_template
-from flask import jsonify
 from torch_utils import transform_image, prediction
 import torch
 
@@ -26,7 +25,6 @@ def upload_predict():
                 UPLOAD_FOLDER, image_file.filename
             )
             image_file.save(image_location)
-            # img_bytes = image_file.read()
             img_tensor = transform_image(image_location)
             pred = prediction(img_tensor = img_tensor, model=model)
             
