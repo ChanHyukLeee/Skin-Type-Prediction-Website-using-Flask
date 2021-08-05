@@ -21,10 +21,6 @@ app = Flask(__name__)
 def upload_predict():
     if request.method == "POST":
         image_file = request.files["image"]
-        # if image_file is None or image_file.filename =="":
-        #     return jsonify({'error': 'no file'})
-        # if not ALLOWED_FILE(image_file.filename):
-        #     return jsonify({'error': 'format not supported'})
         if image_file:
             image_location = os.path.join(
                 UPLOAD_FOLDER, image_file.filename
